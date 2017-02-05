@@ -1,7 +1,363 @@
-body {
-  background: lightgreen;
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Poppins|Raleway:200,400,600,800");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-h1 {
-  color: yellow;
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: 600 1.5em/1.5em "Libre Baskerville", serif;
+  color: #4d4d4d;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  font: 400 1em/1em "Raleway", sans-serif;
+  letter-spacing: .1em;
+  font-weight: 800;
+  font-size: .7em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#header.scene {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/bg/header.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+}
+#header.scene:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 960px) {
+  #header.scene {
+    height: 700px;
+  }
+}
+#header.scene .header-wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header.scene .header-wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+#header.scene .header-wrapper .header-bottom {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  margin-top: 70px;
+  border: 3px solid #f8f9fa;
+}
+#header.scene .header-wrapper .header-bottom:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 960px) {
+  #header.scene .header-wrapper .header-bottom {
+    margin-top: 140px;
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #header.scene .header-wrapper .header-bottom:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+#header.scene .header-wrapper .header-bottom .intro {
+  text-align: center;
+}
+@media (min-width: 650px) {
+  #header.scene .header-wrapper .header-bottom .intro {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    text-align: left;
+  }
+  #header.scene .header-wrapper .header-bottom .intro:before, #header.scene .header-wrapper .header-bottom .intro:after {
+    content: '';
+    display: table;
+  }
+  #header.scene .header-wrapper .header-bottom .intro:after {
+    clear: both;
+  }
+}
+#header.scene .header-wrapper .header-bottom .intro h2 img {
+  max-width: 95%;
+}
+#header.scene .header-wrapper .header-bottom .intro p {
+  margin-top: 20px;
+  color: #f8f9fa;
+  font: 200 1em/1.5em "Poppins", sans-serif;
+  font-size: .75em;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+#header.scene .header-wrapper .header-bottom .intro button.btn-order_now {
+  margin-top: 35px;
+  padding: 15px 55px;
+  background-color: #36aeea;
+  color: #f8f9fa;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .7em;
+  line-height: 130%;
+}
+
+.header-top {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background-color: rgba(159, 173, 186, 0.2);
+}
+.header-top:before, .header-top:after {
+  content: '';
+  display: table;
+}
+.header-top:after {
+  clear: both;
+}
+.header-top:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 960px) {
+  .header-top {
+    padding: 22px 15px;
+  }
+}
+.header-top .navArticle {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.header-top .navArticle:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 960px) {
+  .header-top .navArticle {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-top .navArticle:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+.header-top .navArticle .logo-wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  padding: 4px;
+}
+.header-top .navArticle .logo-wrapper:before, .header-top .navArticle .logo-wrapper:after {
+  content: '';
+  display: table;
+}
+.header-top .navArticle .logo-wrapper:after {
+  clear: both;
+}
+@media (min-width: 960px) {
+  .header-top .navArticle .logo-wrapper {
+    padding: 10px 20px;
+  }
+}
+.header-top .navArticle .logo-wrapper img {
+  max-width: 95%;
+}
+.header-top .navArticle .navigation-list {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  font: 600 1.5em/1.5em "Libre Baskerville", serif;
+  font-size: .5em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.header-top .navArticle .navigation-list:before, .header-top .navArticle .navigation-list:after {
+  content: '';
+  display: table;
+}
+.header-top .navArticle .navigation-list:after {
+  clear: both;
+}
+@media (min-width: 960px) {
+  .header-top .navArticle .navigation-list {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    font-size: .6em;
+    letter-spacing: .1em;
+  }
+  .header-top .navArticle .navigation-list:before, .header-top .navArticle .navigation-list:after {
+    content: '';
+    display: table;
+  }
+  .header-top .navArticle .navigation-list:after {
+    clear: both;
+  }
+}
+.header-top .navArticle .navigation-list ul.navList li.navItem {
+  display: inline-block;
+  color: #4d4d4d;
+  padding: 0 10px;
+}
+.header-top .navArticle .navigation-list ul.navList li.navItem a {
+  display: block;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.header-top .navArticle .navigation-list ul.navList li.navItem a span {
+  color: #4d4d4d;
+}
+.header-top .navArticle .navigation-list ul.navList li.navItem a:hover {
+  border-bottom: 3px solid #36aeea;
+  padding-bottom: 7px;
+}
+.header-top .navArticle .header-btn-wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+.header-top .navArticle .header-btn-wrapper:before, .header-top .navArticle .header-btn-wrapper:after {
+  content: '';
+  display: table;
+}
+.header-top .navArticle .header-btn-wrapper:after {
+  clear: both;
+}
+.header-top .navArticle .header-btn-wrapper .btn-call_us {
+  padding: 7px 15px;
+  font-size: .5em;
+  background: transparent;
+  border: 3px solid #36aeea;
+  text-transform: uppercase;
+  color: #36aeea;
+  float: right;
+}
+@media (min-width: 960px) {
+  .header-top .navArticle .header-btn-wrapper .btn-call_us {
+    padding: 10px 25px;
+  }
 }

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Poppins|Raleway:200,400,600,800');
+
+@include border-box-sizing;
+
+
+//grid System
+$susy: (
+	columns: 12,
+	container: 60em,
+	gutters: 1/4,
+	gutter-position: inside,
+);
+
+
+//break points
+$narrow: 400px;
+$small: 650px;
+$medium: 960px;
+$wide: 1200px;
+
+//Color
+$white: #ffffff;
+$light: #f8f9fa;
+$dark: #000000;
+$blue: #36aeea;
+$grey: #95a5ad;
+$darkgrey: #3a4d53;
+
+$bgColor: $light;
+
+//fonts
+
+$fontFamilyHeader: 'Libre Baskerville', serif;
+$fontFamilyParagraph: 'Poppins', sans-serif;
+$fontFamiltButton: 'Raleway', sans-serif;
+$thin: 200;
+$normal: 400;
+$bold: 600;
+$heavy: 800;
+
+
+$fontheader: $bold 1.5em/1.5em $fontFamilyHeader;
+$mainfont: $thin 1em/1.5em $fontFamilyParagraph;
+$fontBtn: $normal 1em/1em $fontFamiltButton;
+
+$colorHead: lighten($dark, 30);
+
+/// Text Shadow custom;
+$default-text-shadow-color: rgba($dark, 0.6);
+$default-text-shadow-blur: 2px;
+$default-text-shadow-v-offset: 1px;

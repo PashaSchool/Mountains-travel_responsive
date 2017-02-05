@@ -1,1 +1,33 @@
+//compass and libs
+@import "compass";
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/filter";
+@import "compass/css3/flexbox";
+@import "compass/css3/transition";
+
+//external libs
+@import "susy";
+@import "breakpoint";
+
+//Core
+@import "variables";
+@import "basic";
+@import "layout";
+@import "mixin";
+
+
+
+// modular style
+@import "modules/aboutas";
+@import "modules/clientsay";
+@import "modules/contactus";
+@import "modules/footer";
+@import "modules/gallery";
 @import "modules/intro";
+@import "modules/journal";
+@import "modules/nav";
+@import "modules/ordernow";
+@import "modules/trevelus";
+@import "modules/wework";

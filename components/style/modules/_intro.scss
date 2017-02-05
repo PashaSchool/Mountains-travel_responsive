@@ -1,3 +1,56 @@
-body {
-	background: lightgreen
+#header.scene {
+	@include container(100%);
+	@include backImg("../images/bg/header.png");
+	@include breakpoint($medium) {
+		height: 700px;
+	}
+
+	height: 500px;
+
+	.header-wrapper {
+		@include container(100%);
+		.header-bottom {
+			@include container(80%);
+			padding: 40px;
+			@include breakpoint($medium) {
+				margin-top: 140px;
+				@include container();
+			}
+			margin-top: 70px;
+			border: 3px solid $light;
+			.intro {
+				text-align: center;
+				@include breakpoint($small) {
+					@include span(6 of 12);
+					@include clearfix;
+					text-align: left;
+				}//brekpoint
+				
+				h2 {
+					img {
+						max-width: 95%;
+					}//img
+				}//h2
+				p {
+					margin-top: 20px;
+					color: $light;
+					font: $mainfont;
+					font-size: .75em;
+					@include single-text-shadow;
+					letter-spacing: 1px;
+				}//p
+				button.btn-order_now {
+					margin-top: 35px;
+					padding: 15px 55px;
+					background-color: $blue;
+					color: $light;
+					border: none;
+					text-transform: uppercase;
+					font-weight: $bold;
+					font-size: .7em;
+					line-height: 130%;
+				}//button
+			}//intro
+		}//header bottom
+	}//header wrapper
 }

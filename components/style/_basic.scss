@@ -1,0 +1,29 @@
+ul {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+
+a {
+	color: $dark;
+	text-decoration: none;
+}
+
+#{headings()} {
+	font: $fontheader;
+	color: $colorHead;
+	// font-weight: $bold;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+}
+
+.btn{
+	font: $fontBtn;
+	letter-spacing: .1em;
+	font-weight: $heavy;
+	font-size: .7em;
+	@include border-radius(3px);
+}

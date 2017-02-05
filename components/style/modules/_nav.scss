@@ -1,0 +1,90 @@
+.header-top {
+  @include clearfix;
+  @include container(100%);
+  @include breakpoint($medium) {
+    padding: 22px 15px;
+
+	}
+	padding: 0;
+	background-color: rgba(darken($light, 30), .2);
+
+	.navArticle {
+
+		@include container(95%);
+		@include breakpoint($medium) {
+			@include container();
+        } //breakpoint
+
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(center);
+
+        .logo-wrapper {
+        	@include span(2 of 12);
+        	@include clearfix;
+
+        	@include breakpoint($medium) {
+                padding: 10px 20px;
+            }
+            padding: 4px;
+            img {
+              max-width: 95%;
+            } //img
+        } //logo
+
+        .navigation-list {
+        	@include span(10 of 12);
+        	font: $fontheader;
+        	font-size: .5em;
+        	@include clearfix;
+           text-transform: uppercase;
+           font-weight: $bold;
+
+           @include breakpoint($medium) {
+              @include span(8 of 12);
+              @include clearfix;
+              font-size: .6em;
+              letter-spacing: .1em;
+
+        	}//breakpoint
+        	ul.navList {
+        		li.navItem {
+        			display: inline-block;
+        			color: $colorHead;
+        			padding: 0 10px;
+        			a {
+                        // @include border-box-sizing;
+                        display: block;
+                        margin: 5px 0;
+                        padding: 10px 0;
+                        span {
+                        	color: $colorHead;
+                        }
+                        &:hover {
+                        	border-bottom: 3px solid $blue;
+                        	padding-bottom: 7px;
+                        } //hover a
+                    } //a
+                } //li
+            } //ul
+        } //navigation nav
+        .header-btn-wrapper {
+            @include span(2 of 12);
+            @include clearfix;
+
+            .btn-call_us {
+               @include breakpoint($medium) {
+                  padding: 10px 25px;
+              }
+              padding: 7px 15px;
+              font-size: .5em;
+              background: transparent;
+              border: 3px solid $blue;
+              text-transform: uppercase;
+              color: $blue;
+              float: right;
+
+            } //btn
+        }//header-btn-wrapper  
+    } //Navarticle
+} //headerTop
