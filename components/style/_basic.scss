@@ -27,3 +27,12 @@ a {
 	font-size: .7em;
 	@include border-radius(3px);
 }
+.waves {
+	background-image: url("../images/icons/waves.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	display: block;
+	width: 85px;
+	height: 35px;
+} 
