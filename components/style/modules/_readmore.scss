@@ -1,6 +1,7 @@
 #readmore {
 	@include container(100%);
-	// background-color: rgba(darken($light, 20), .4);
+	background-color: rgba(lighten($dark, 80), .4);
+	padding: 0 0 25px 0;
 	.wrapper-readmore {
 		@include breakpoint($small $medium) {
 			height: 400px;
