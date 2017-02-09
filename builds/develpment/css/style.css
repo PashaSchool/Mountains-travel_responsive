@@ -394,10 +394,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 #journal.scene .items-journal ul.journal-list-items li.jun-item h4 {
   font-size: .8em;
-  line-height: 130%;
+  line-height: 150%;
   width: 80%;
   margin: 0 auto;
   letter-spacing: 4px;
+}
+#journal.scene .items-journal ul.journal-list-items li.jun-item h4 span.line-through {
+  text-decoration: line-through;
 }
 #journal.scene .items-journal ul.journal-list-items li.jun-item p {
   width: 80%;

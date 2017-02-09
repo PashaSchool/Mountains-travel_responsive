@@ -1,33 +1,29 @@
 @mixin clearfix {
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
-
-@mixin backImg( $image,
-			  	$grDir: to bottom,
-			  	$opStart: 0,
-				$opEnd: 0,
-				$bgPos: center center
-) {	
-  background: linear-gradient(
-    $grDir,
-    rgba(0,0,0, $opStart),
-    rgba(0,0,0, $opEnd)
-    ),
-  url($image); 
-  background-repeat: no-repeat;
-  background-position: $bgPos;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
+@mixin backImg( $image, $grDir: to bottom, $opStart: 0, $opEnd: 0, $bgPos: center center) {
+    background: linear-gradient( $grDir, rgba(0, 0, 0, $opStart), rgba(0, 0, 0, $opEnd)), url($image);
+    background-repeat: no-repeat;
+    background-position: $bgPos;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
+@mixin positionMiddle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
