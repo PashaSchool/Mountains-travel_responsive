@@ -1,7 +1,10 @@
 #journal.scene {
-    @include container(100%);
+    @include container(95%);
     margin-top: 20px;
-    padding: 55px 0 35px 0;
+    @include breakpoint($medium) {
+        padding: 55px 0 35px 0;
+        @include container(100%);
+    }
     .header-journal {
         @include container();
         text-align: center;
@@ -12,39 +15,44 @@
             font-size: 1.6em;
             line-height: 220%;
             letter-spacing: 4px;
-            margin: 15px 0 25px 0;
+            margin: 0;
+            @include breakpoint($medium) {
+                margin: 15px 0 25px 0;
+            }
         } //h2
     }
     .items-journal {
         @include container();
         height: auto;
         ul.journal-list-items {
-            @include box-shadow(lighten($dark, 30) 2px 2px 10px);
             @include clearfix();
             li.jun-item {
                 position: relative;
                 display: inline-block;
                 float: left;
-                width: 33.333%;
-                height: 300px;
                 text-align: center;
                 padding: 30px 0;
+                overflow: hidden;
+                width: 50%;
+                height: 300px;
                 min-width: 300px;
                 min-height: 300px;
-                overflow: hidden;
+                border-bottom: 1px solid rgba(lighten($dark, 40), .3);
+                @include breakpoint($medium) {
+                    width: 33.333%;
+                    height: 300px;
+                    min-width: 300px;
+                    min-height: 300px;
+                    @include box-shadow(lighten($dark, 30) 2px 2px 10px);
+                } //breakpont
                 &.love {
                     @include backImg("../images/img3.png");
                     &:after {
                         content: '';
                         width: 21%;
                         height: 21%;
-                        position: absolute;
                         z-index: 250;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
+                        @include positionMiddle;
                         background-image: url("../images/icons/Vector-Smart-Object1.png");
                         background-repeat: no-repeat;
                         background-size: contain;
@@ -68,13 +76,8 @@
                         content: '';
                         width: 21%;
                         height: 21%;
-                        position: absolute;
                         z-index: 250;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
+                        @include positionMiddle;
                         background-image: url("../images/icons/Vector-Smart-Object.png");
                         background-repeat: no-repeat;
                         background-size: contain;
@@ -83,13 +86,20 @@
                     &:before {
                         content: '';
                         position: absolute;
-                        bottom: 0;
-                        left: 10%;
                         z-index: 300;
                         width: 0;
                         height: 0;
+                        // top: 0;
+                        // right: 10%;
                         border: 10px solid transparent;
-                        border-bottom-color: $light;
+                        border-right-color: $light;
+                        @include breakpoint($medium) {
+                            bottom: 0;
+                            left: 10%;
+                            border: 10px solid transparent;
+                            border-bottom-color: $light;
+                        }
+                        //breakpoint
                     } //before
                 } //true
                 &.water {
@@ -98,13 +108,8 @@
                         content: '';
                         width: 21%;
                         height: 21%;
-                        position: absolute;
                         z-index: 250;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
+                        @include positionMiddle;
                         background-image: url("../images/icons/Vector-Smart-Object2.png");
                         background-repeat: no-repeat;
                         background-size: contain;
@@ -114,12 +119,17 @@
                         content: '';
                         position: absolute;
                         top: 10%;
-                        left: 0;
+                        right: 0;
                         z-index: 300;
                         width: 0;
                         height: 0;
                         border: 10px solid transparent;
-                        border-left-color: $light;
+                        border-right-color: $light;
+                        @include breakpoint($medium) {
+                            left: 0;
+                            border: 10px solid transparent;
+                            border-left-color: $light;
+                        }
                     } //before
                 } //water
                 span.journal-type {
@@ -139,7 +149,7 @@
                     margin: 0 auto;
                     letter-spacing: 4px;
                     span.line-through {
-                    	text-decoration: line-through;
+                        text-decoration: line-through;
                     }
                 } //h4
                 p {

@@ -41,11 +41,7 @@
 			span.waves {
 				margin-top: 40px;
 				margin-left: 10px;
-				display: none;
-				@include breakpoint($small) {
-					// margin-top: 160px;
-					display: block;
-				}//breeakpoint
+
 			}//wave
 			p{
 				font: $mainfont;

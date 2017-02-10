@@ -1,0 +1,87 @@
+#readme.scene {
+    @include backImg("../images/bg/bg-tree.png", 100% 30%, 0, 0, 0, bottom center);
+    @include container(100%);
+
+    background-color: rgba(lighten($dark, 95), .95);
+    height: 350px;
+    @include breakpoint($medium) {
+         height: 600px;
+    }
+    position: relative;
+    .sceneTree,
+    .sceneTreeBlur {
+        position: absolute;
+        z-index: 250;
+        width: 100%;
+        height: inherit;
+    }
+    .sceneTree {
+        @include backImg("../images/tree.png", 20%, 0, 0, 0, 77% bottom);
+    }
+    .sceneTreeBlur {
+        z-index: 251;
+        @include backImg("../images/blurTree.png", 30%, 0, 0, 0, right bottom);
+    }
+    section.readme-wrapper {
+        z-index: 300;
+        max-height: 220px;
+        @include breakpoint($medium) {
+            max-height: 320px;
+        }
+        // height: 30%;
+        @include container();
+        @include clearfix;
+        @include positionMiddle;
+        span.waves {}
+        //span
+        h1 {
+            margin: 15px 0;
+            letter-spacing: 3px;
+        }//h1
+        p {
+            color: rgba(#000000, .7);
+            padding: 15px 0;
+            font: $mainfont;
+            font-size: .7em;
+        }//p
+        form {
+            display: inline-block;
+            @include clearfix;
+            input {
+                float: left;
+                border: none;
+                padding: 0 15px;
+                height: 40px;
+                width: 250px;
+                &:focus {
+                    outline-style: none;
+                    border: none;
+                } //focus psClass
+            } //input
+            button.btn-order-now {
+                background-color: $blue;
+                color: $light;
+                width: 150px;
+                height: 40px;
+                padding: 15px 25px;
+                border: none;
+            } //button
+        } //form
+        .data-wrapper {
+            padding: 15px 0;
+            .data-icn {
+                display: inline-block;
+                float: left;
+                width: 15px;
+                height: 15px;
+                @include backImg("../images/icons/Lock-locked.png");
+            }//data icon
+            .data-text {
+                display: inline-block;
+                float: left;
+                color: $blue;
+                margin-left: 10px;
+            }//data text
+        }//wrapper data
+    } //section readme-wrapper
+}
