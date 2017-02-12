@@ -6,15 +6,46 @@
     }
     padding: 0;
     background-color: rgba(darken($light, 30), .2);
-
     .navArticle {
+        .burger-menu-wrapper {
+            display: none;
+            @include breakpoint(0 $small) {
+                cursor: pointer;
+                display: block;
+                height: 30px;
+                @include span(1);
+                float: right;
+                padding: 5px;
+            }
+            .burger-menu {
+                display: block;
+                width: 30px;
+                height: 2px;
+                background-color: $blue;
+                position: relative;
+                &:after,
+                &:before {
+                    content: '';
+                    width: inherit;
+                    height: inherit;
+                    background-color: inherit;
+                    position: absolute;
+                }
+                &:after {
+                    top: 8px;
+                }
+                &:before {
+                    top: 16px;
+                }
+            }
+        }
+        position: relative;
+        z-index: 5;
         @include container(95%);
+        @include clearfix;
         @include breakpoint($medium) {
             @include container();
         } //breakpoint
-        @include display-flex();
-        @include align-items(center);
-        @include justify-content(center);
         .logo-wrapper {
             @include span(2 of 12);
             @include clearfix;
@@ -27,34 +58,76 @@
             } //img
         } //logo
         .navigation-list {
-            @include span(10 of 12);
+            @include span(8 of 12);
             font: $fontheader;
             font-size: .5em;
             @include clearfix;
             text-transform: uppercase;
             font-weight: $bold;
-            @include breakpoint($medium) {
+            @include breakpoint($small $medium) {
                 @include span(8 of 12);
                 @include clearfix;
                 font-size: .6em;
                 letter-spacing: .1em;
             } //breakpoint
+            @include breakpoint(0 $small) {
+                @include span(6 of 12);
+            } //breakpoint for mobile-first
+            ul.navList.show-menu {
+                display: block;
+                top: 100%;
+            }
             ul.navList {
+                @include breakpoint(0 $small) {
+                    @include span(12 of 12);
+                    @include clearfix;
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    opacity: 0;
+                }
                 li.navItem {
                     display: inline-block;
                     color: $colorHead;
                     padding: 0 10px;
+                    @include breakpoint($small $medium) {
+                        font-size: .8em;
+                    }
+                    font-size: 1.4em;
+                    @include breakpoint(0 $small) {
+                        @include span(12);
+                        padding: 0;
+                        border-bottom: 1px solid lighten($dark, 40);
+                        display: list-item;
+                        background-color: lighten($dark, 30);
+                        text-align: center;
+                    } //breakpoint for mobile-first
                     a {
-                        // @include border-box-sizing;
                         display: block;
                         margin: 5px 0;
                         padding: 10px 0;
+                        @include breakpoint(0 $small) {
+                            transition: all 1s cubic-bezier(0.30, 1, 0.85, 1);
+                        }
                         span {
                             color: $colorHead;
-                        }
+                            @include breakpoint(0 $small) {
+                                color: $blue;
+                                font-size: 1.4em;
+                                letter-spacing: 1.4px;
+                            }//breakpoint
+                        }//span
                         &:hover {
-                            border-bottom: 3px solid $blue;
-                            padding-bottom: 7px;
+                            @include breakpoint($small) {
+                                border-bottom: 3px solid $blue;
+                                padding-bottom: 7px;
+                            }
+                            @include breakpoint(0 $small) {
+                                background-color: $grey;
+                                @include single-text-shadow;
+                            }
                         } //hover a
                     } //a
                 } //li
@@ -63,9 +136,17 @@
         .header-btn-wrapper {
             @include span(2 of 12);
             @include clearfix;
+            @include breakpoint($small $medium) {
+                @include span(2 of 12);
+            }
+            @include breakpoint(0 $small) {
+                float: right;
+                @include span(3 of 12);
+            }
             .btn-call_us {
-                @include breakpoint($medium) {
+                @include breakpoint($small $medium) {
                     padding: 10px 25px;
+                    margin: 5px;
                 }
                 padding: 7px 15px;
                 font-size: .5em;
@@ -74,6 +155,11 @@
                 text-transform: uppercase;
                 color: $blue;
                 float: right;
+                @include breakpoint(0 $small) {
+                    margin: 5px;
+                    float: left;
+
+                } //breakpoint
             } //btn
         } //header-btn-wrapper  
     } //Navarticle
