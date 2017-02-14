@@ -1,7 +1,7 @@
 (function() {
 
     var nav = document.getElementById('navigation'),
-    	showNavBtn = document.getElementById('showNavBtn');
+        showNavBtn = document.getElementById('showNavBtn');
 
     function animate(draw, duration) {
         var start = performance.now();
@@ -37,18 +37,15 @@
     }
 
     window.onresize = function() {
-    	var windowWidth = window.innerWidth 
-	    	|| document.documentElement.offsetWidth 
-	    	|| document.body.clientWidth;
+        var windowWidth = window.innerWidth || document.documentElement.offsetWidth || document.body.clientWidth;
 
-    	if(windowWidth <= 650) {
-    		nav.style.display = "";
-    	}
-    	if(windowWidth > 650) {
-    		nav.style.display = "block";
-    		nav.style.opacity = 1;
-    		// nav.style.top = 
-    	}
+        if (windowWidth <= 650) {
+            nav.style.display = "";
+        }
+        if (windowWidth > 650) {
+            nav.style.display = "block";
+            nav.style.opacity = 1;
+        }
     }
 
 })()

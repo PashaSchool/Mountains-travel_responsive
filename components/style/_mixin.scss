@@ -10,7 +10,7 @@
 }
 
 @mixin backImg( $image, $bgSize: cover, $grDir: to bottom, $opStart: 0, $opEnd: 0, $bgPos: center center) {
-    background: linear-gradient( $grDir, rgba(255, 255, 255, $opStart), rgba(0, 0, 0, $opEnd)), url($image);
+    background: linear-gradient( $grDir, rgba(0, 0, 0, $opStart), rgba(0, 0, 0, $opEnd)), url($image);
     background-repeat: no-repeat;
     background-position: $bgPos;
     -webkit-background-size: $bgSize;
@@ -19,11 +19,11 @@
     background-size: $bgSize;
 }
 @mixin positionMiddle {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
+    position: absolute;
 }
 

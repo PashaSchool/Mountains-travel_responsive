@@ -1,0 +1,110 @@
+#wework {
+    @include container();
+    @include clearfix;
+    height: 700px;
+    .wework_header {
+        height: 200px;
+        background: red;
+        text-align: center;
+    }
+    .wework_body {
+        ul.wework_list {
+            display: inline-block;
+            width: 100%;
+            height: 500px;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: span(9 of 12);
+                left: span(1.5 of 12);
+                top: 27px;
+                background-color: $dark;
+                z-index: -1;
+            }
+            @include clearfix;
+            li.wework_list_item {
+                @include span(3 of 12);
+                position: relative;
+                height: 100%;
+                span.number-item {
+                    display: block;
+                    margin: 0 auto;
+                    width: 45px;
+                    height: 45px;
+                    background-color: $light;
+                    @include border-radius(100%);
+                    border: 2px solid $blue;
+                    color: $blue;
+                    text-align: center;
+                    line-height: 43px;
+                }
+                .wrapper-circle {
+                    width: 170px;
+                    height: 170px;
+                    background-color: rgba(lighten($dark, 90), .7);
+                    border-radius: 100%;
+                    z-index: -1;
+                    margin: 90px auto;
+                    position: relative;
+                    &:before {
+                    	content: '';
+                    	width: 3px;
+                    	height: 100%;
+                    	background-color: $dark;
+                    	position: absolute;
+                    	left: calc(50% + 1.5px);
+                    	top: -100%;
+                    }
+                    .ractangle {
+                        position: relative;
+                        width: 120px;
+                        height: 60px;
+                        @include positionMiddle;
+                        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+                        background: $white !important;
+                        &:after,
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            border: 60px solid $white;
+                        }
+                        &:after {
+                            border-right-color: transparent;
+                            border-left-color: transparent;
+                            border-bottom-color: transparent;
+                            transform: scaleY(.7);
+                            top: calc(100% - 18px);
+                        }
+                        &:before {
+                            border-right-color: transparent;
+                            border-left-color: transparent;
+                            border-top-color: transparent;
+                            transform: scaleY(.7);
+                            top: calc(-100% - 41px);
+                        } //before
+                        .icn {
+                            display: block;
+                            width: 38px;
+                            height: 38px;
+                            @include positionMiddle;
+                        }
+                    } //circle
+                    #note-icn {
+                        @include backImg('../images/icons/1.png', 36px 36px);
+                    }
+                    #user-icn {
+                        @include backImg('../images/icons/7.png', 36px 36px);
+                    }
+                    #book-icn {
+                        @include backImg('../images/icons/71.png', 36px 36px);
+                    }
+                    #oclock-icn {
+                        @include backImg('../images/icons/11.png', 36px 36px);
+                    }
+                } //wrapper
+            } //li
+        } //ul
+    }
+}
