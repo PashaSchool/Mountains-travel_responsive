@@ -1,13 +1,12 @@
 #readme.scene {
     @include backImg("../images/bg/bg-tree.png", 100% 30%, 0, 0, 0, bottom center);
     @include container(100%);
-
     background-color: rgba(lighten($dark, 95), .95);
     height: 350px;
-    @include breakpoint($medium) {
-         height: 600px;
-    }
     position: relative;
+    @include breakpoint($medium) {
+        height: 600px;
+    }
     .sceneTree,
     .sceneTreeBlur {
         position: absolute;
@@ -25,27 +24,39 @@
     section.readme-wrapper {
         z-index: 300;
         max-height: 220px;
+        @include clearfix;
+        @include container(95%);
+        @include positionMiddle;
         @include breakpoint($medium) {
             max-height: 320px;
+            @include container();
+            padding-left: 2em;
         }
-        // height: 30%;
-        @include container();
-        @include clearfix;
-        @include positionMiddle;
+        @include breakpoint(0 $small) {
+            text-align: center;
+            margin: 0 auto;
+        }
+        //breakpoint
         span.waves {}
         //span
         h1 {
             margin: 15px 0;
             letter-spacing: 3px;
-        }//h1
+        } //h1
         p {
             color: rgba(#000000, .7);
             padding: 15px 0;
             font: $mainfont;
             font-size: .7em;
-        }//p
+        } //p
         form {
-            display: inline-block;
+            @include breakpoint(0 $small) {
+                margin: 0 auto;
+                text-align: center;
+            } //breakpoint
+            @include breakpoint($medium) {
+                display: inline-block;
+            }
             @include clearfix;
             input {
                 float: left;
@@ -53,6 +64,11 @@
                 padding: 0 15px;
                 height: 40px;
                 width: 250px;
+                @include breakpoint(0 $small) {
+                    display: block;
+                    float: none;
+                    margin: 10px auto;
+                }
                 &:focus {
                     outline-style: none;
                     border: none;
@@ -65,6 +81,9 @@
                 height: 40px;
                 padding: 15px 25px;
                 border: none;
+                @include breakpoint(0 $small) {
+                    width: 250px;
+                }
             } //button
         } //form
         .data-wrapper {
@@ -75,13 +94,13 @@
                 width: 15px;
                 height: 15px;
                 @include backImg("../images/icons/Lock-locked.png");
-            }//data icon
+            } //data icon
             .data-text {
                 display: inline-block;
                 float: left;
                 color: $blue;
                 margin-left: 10px;
-            }//data text
-        }//wrapper data
+            } //data text
+        } //wrapper data
     } //section readme-wrapper
 }
