@@ -3,31 +3,40 @@
     @include clearfix;
     height: 700px;
     .wework_header {
-        height: 200px;
-        background: red;
+        height: 180px;
+        // background: red;
+        padding-top: 50px;
         text-align: center;
+    }
+    @include breakpoint(0 $small) {
+        display: none;
+    }
+    h2,
+    span{
+    	margin: 0 auto;
+    }
+    h2 {
+    	padding: 15px 0 10px 0;
     }
     .wework_body {
         ul.wework_list {
             display: inline-block;
             width: 100%;
-            height: 500px;
             position: relative;
             &:before {
                 content: '';
                 position: absolute;
-                height: 3px;
+                height: 1px;
                 width: span(9 of 12);
                 left: span(1.5 of 12);
-                top: 27px;
-                background-color: $dark;
+                top: 24px;
+                background-color: lighten($grey, 25);
                 z-index: -1;
             }
             @include clearfix;
             li.wework_list_item {
                 @include span(3 of 12);
                 position: relative;
-                height: 100%;
                 span.number-item {
                     display: block;
                     margin: 0 auto;
@@ -35,60 +44,84 @@
                     height: 45px;
                     background-color: $light;
                     @include border-radius(100%);
-                    border: 2px solid $blue;
+                    border:3px solid $blue;
                     color: $blue;
                     text-align: center;
                     line-height: 43px;
+                    font-width: $heavy;
                 }
                 .wrapper-circle {
                     width: 170px;
                     height: 170px;
-                    background-color: rgba(lighten($dark, 90), .7);
+                    background-color: lighten($grey, 30);
                     border-radius: 100%;
-                    z-index: -1;
-                    margin: 90px auto;
+                    margin: 90px auto 10px;
                     position: relative;
+                    @include breakpoint($small $ex-small) {
+                        width: 140px;
+                        height: 140px;
+                        margin: 60px auto 10px;
+                    }
                     &:before {
-                    	content: '';
-                    	width: 3px;
-                    	height: 100%;
-                    	background-color: $dark;
-                    	position: absolute;
-                    	left: calc(50% + 1.5px);
-                    	top: -100%;
+                        content: '';
+                        width: 1px;
+                        height: 100%;
+                        background-color: lighten($grey, 25);
+                        position: absolute;
+                        left: calc(50% - 0.5px);
+                        top: calc(-90% + 40px);
+                        z-index: -10;
                     }
                     .ractangle {
                         position: relative;
                         width: 120px;
                         height: 60px;
                         @include positionMiddle;
-                        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+                        filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, .5));
                         background: $white !important;
+                        @include breakpoint($small $ex-small) {
+                            width: 102px;
+                            height: 51px;
+                        }
                         &:after,
                         &:before {
                             content: '';
                             position: absolute;
                             border: 60px solid $white;
+                            @include breakpoint($small $ex-small) {
+                                border-width: 51px;
+                            }
                         }
                         &:after {
                             border-right-color: transparent;
                             border-left-color: transparent;
                             border-bottom-color: transparent;
-                            transform: scaleY(.7);
-                            top: calc(100% - 18px);
+                            transform: scaleY(.5);
+                            top: calc(100% - 30px);
+                            @include breakpoint($small $ex-small) {
+                                top: calc(100% - 26px);
+                            }
                         }
                         &:before {
                             border-right-color: transparent;
                             border-left-color: transparent;
                             border-top-color: transparent;
-                            transform: scaleY(.7);
-                            top: calc(-100% - 41px);
+                            transform: scaleY(.5);
+                            top: calc(-100% - 30px);
+                            @include breakpoint($small $ex-small) {
+                                top: calc(-100% - 25px);
+                            }
                         } //before
                         .icn {
                             display: block;
                             width: 38px;
                             height: 38px;
                             @include positionMiddle;
+                            @include breakpoint($small $ex-small) {
+                                width: 31px;
+                                height: 31px;
+                                background-size: 30px 30px !important;
+                            }
                         }
                     } //circle
                     #note-icn {
@@ -104,6 +137,26 @@
                         @include backImg('../images/icons/11.png', 36px 36px);
                     }
                 } //wrapper
+                .wework_desc_wrapper {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 10px;
+                    h4 {
+                        font-size: .8em;
+                        text-transform: lowercase;
+                        padding: 0 10px 5px 10px;
+                        font-weight: $heavy;
+                        color: darken($light, 90);
+                        &:first-letter {
+                            font-size: .9em;
+                        }
+                    } //h4
+                    p {
+                        font: $mainfont;
+                        font-size: .7em;
+                        color: rgba(#000000, .5);
+                    } //paragraph
+                }
             } //li
         } //ul
     }
